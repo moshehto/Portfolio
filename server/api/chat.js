@@ -6,10 +6,6 @@ dotenv.config();
 const router = express.Router();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-// ✅ Add this to handle CORS preflight
-router.options('/', (req, res) => {
-  res.sendStatus(200);
-});
 
 router.post('/', async (req, res) => {
   const messages = req.body.messages;
