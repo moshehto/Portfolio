@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  background-color: #7D6A5A; /* light gray */
+  font-family: Menlo, Consolas, Monaco, 'Courier New', monospace;  }
+h1 {
+  color: #F8F6F1; /* Cream */
+}
+p {
+  color: #F8F6F1; /* Cream */
+}
+
+/* Do NOT give body or #root a background */
+body, #root {
+background-color: #2C2A24; /* match footer/nav if needed */
+margin: 0;
+padding: 0;
+min-height: 100vh;
+}
+
+/* Wrapper holds everything vertically */
+.page-wrapper {
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+
+/* Main content gets your custom background color */
+.main-content {
+flex: 1;
+background-color: #7D6A5A; /* your desired section bg */
+padding: 2rem;
+}
+

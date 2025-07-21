@@ -1,0 +1,49 @@
+.resume-page {
+    min-height: 80vh;
+    max-width: 180vh;
+    background-color: #F8F6F1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+  
+  .resume-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #2C2A24;
+  }
+
+  .resume-container {
+    max-width: 800px; /* or 900px depending on your style */
+    width: 90%;
+    text-align: center;
+  }
+  
+  .resume-viewer {
+    width: 1000%;
+    max-width: 800px;
+    height: 1000px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    box-shadow: 0 px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  .download-btn {
+    background-color: #2C2A24;
+    color: #F8F6F1;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color: #444038;
+  }
+  
