@@ -2,8 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './styling-comp/chatbot.css';
 import avatar from '../assets/sleeping-cat.png';
 
-// Use Vite environment variable for API URL
-const API_BASE = import.meta.env.VITE_API_URL;
+const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + import.meta.env.VITE_GEMINI_API_KEY;
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
@@ -22,18 +21,33 @@ export default function Chatbot() {
     setInput('');
     setLoading(true);
 
+    const geminiMessages = [
+      {
+        role: "user",
+        parts: [{ text: `Answer based on this context: Mo is a software engineering student at Western. He interned at Thing Logix in SF. He's worked on a wedding RSVP system (SES, Lambda, DynamoDB, API Gateway), a GPT-powered chatbot, and an internship tracker. He’s looking for a Summer 2026 SWE internship.\n\nUser: ${trimmed}` }],
+      },
+    ];
+
     try {
-      const res = await fetch("https://mo-api-url.up.railway.app/api/chat", {
+      const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: newMessages }),
+        body: JSON.stringify({ contents: geminiMessages }),
       });
 
       const data = await res.json();
-      setMessages([...newMessages, { sender: 'bot', text: data.reply || 'No reply received.' }]);
+      const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+
+      setMessages([
+        ...newMessages,
+        { sender: 'bot', text: reply || "Sorry, I didn't understand that." },
+      ]);
     } catch (err) {
-      console.error('Error fetching chatbot response:', err);
-      setMessages([...newMessages, { sender: 'bot', text: 'Something went wrong. Please try again later.' }]);
+      console.error('Error:', err);
+      setMessages([
+        ...newMessages,
+        { sender: 'bot', text: 'Something went wrong. Please try again later.' },
+      ]);
     }
 
     setLoading(false);
@@ -59,8 +73,8 @@ export default function Chatbot() {
       </div>
 
       <div className="chatbot-messages">
-        {messages.map((msg, index) => (
-          <div key={index} className={`message-row ${msg.sender}`}>
+        {messages.map((msg, i) => (
+          <div key={i} className={`message-row ${msg.sender}`}>
             <div className="message-bubble">{msg.text}</div>
           </div>
         ))}
