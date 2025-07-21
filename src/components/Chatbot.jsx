@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './styling-comp/chatbot.css'; // You'll style it here
+import './styling-comp/chatbot.css';
 import avatar from '../assets/sleeping-cat.png';
+
+// Use Vite environment variable for API URL
+const API_BASE = import.meta.env.VITE_API_URL;
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
@@ -11,19 +14,29 @@ export default function Chatbot() {
   const scrollRef = useRef(null);
 
   const sendMessage = async () => {
-    if (!input.trim()) return;
-    const newMessages = [...messages, { sender: 'user', text: input }];
+    const trimmed = input.trim();
+    if (!trimmed) return;
+
+    const newMessages = [...messages, { sender: 'user', text: trimmed }];
     setMessages(newMessages);
     setInput('');
     setLoading(true);
 
-    setTimeout(() => {
-      setMessages([
-        ...newMessages,
-        { sender: 'bot', text: `You asked: "${input}". I'm still learning about Mo.` },
-      ]);
-      setLoading(false);
-    }, 1000);
+    try {
+      const res = await fetch(`${API_BASE}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: newMessages }),
+      });
+
+      const data = await res.json();
+      setMessages([...newMessages, { sender: 'bot', text: data.reply || 'No reply received.' }]);
+    } catch (err) {
+      console.error('Error fetching chatbot response:', err);
+      setMessages([...newMessages, { sender: 'bot', text: 'Something went wrong. Please try again later.' }]);
+    }
+
+    setLoading(false);
   };
 
   const handleKeyDown = (e) => {
@@ -46,8 +59,8 @@ export default function Chatbot() {
       </div>
 
       <div className="chatbot-messages">
-        {messages.map((msg, i) => (
-          <div key={i} className={`message-row ${msg.sender}`}>
+        {messages.map((msg, index) => (
+          <div key={index} className={`message-row ${msg.sender}`}>
             <div className="message-bubble">{msg.text}</div>
           </div>
         ))}
