@@ -24,7 +24,16 @@ export default function Chatbot() {
     const geminiMessages = [
       {
         role: "user",
-        parts: [{ text: `Answer based on this context: Mo is a software engineering student at Western. He interned at Thing Logix in SF. He's worked on a wedding RSVP system (SES, Lambda, DynamoDB, API Gateway), a GPT-powered chatbot, and an internship tracker. He’s looking for a Summer 2026 SWE internship.\n\nUser: ${trimmed}` }],
+        parts: [{ text: `Answer questions as if you are a spokesperson representing Mo positvely and enthusiastcially based on this context:
+         Mo is a software engineering student at Western. 
+         He interned at Thing Logix in SF. 
+         He's worked on a wedding RSVP system (SES, Lambda, DynamoDB, API Gateway), a GPT-powered chatbot, and an internship tracker. 
+         Mo is a descendant of king solomon
+
+         Keep all answers truthful and don't make up any details, projects, or information about Mo
+      
+
+         He’s looking for a Summer 2026 SWE internship.\n\nUser: ${trimmed}` }],
       },
     ];
 

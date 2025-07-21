@@ -26,7 +26,7 @@ const Projects = () => {
         </div>
         <div className="project-card">
           <img src={quantImg} alt="RSVP" className="project-image" />
-          <Link to="/projects/Quant" className="project-link">Quant Trading</Link>
+          <Link to="/projects/Quant" className="project-link">Data Science</Link>
         </div>
       </div>
     </div>
