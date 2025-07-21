@@ -1,4 +1,3 @@
-// server/api/chat.js
 import express from 'express';
 import { OpenAI } from 'openai';
 import dotenv from 'dotenv';
@@ -6,6 +5,11 @@ dotenv.config();
 
 const router = express.Router();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+// ✅ Add this to handle CORS preflight
+router.options('/', (req, res) => {
+  res.sendStatus(200);
+});
 
 router.post('/', async (req, res) => {
   const messages = req.body.messages;
@@ -23,7 +27,7 @@ router.post('/', async (req, res) => {
     Mo is looking for a Summer 2026 software engineering internship.
     Only answer questions related to Mo’s education, experience, or technical skills.
     Politely decline irrelevant or personal questions.
-    `;
+  `;
 
   const formattedMessages = [
     { role: 'system', content: systemPrompt },
