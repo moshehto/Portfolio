@@ -1,8 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './styling-comp/chatbot.css';
 import avatar from '../assets/sleeping-cat.png';
+import moProfile from './moProfile';'./moProfile';
 
 const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + import.meta.env.VITE_GEMINI_API_KEY;
+
+const SYSTEM_PROMPT = `
+You're a bright, enthusiastic, and upbeat spokesperson for Mo, a Software Engineering student at Western University. 
+Represent him positively, confidently, and truthfully—never make up details or exaggerate.
+Your job is to answer questions with energy and optimism, showcasing Mo’s achievements and character in a concise and engaging way. 
+Keep answers factual, enthusiastic, and under 50 words unless asked for details.
+`;
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
@@ -24,18 +32,15 @@ export default function Chatbot() {
     const geminiMessages = [
       {
         role: "user",
-        parts: [{ text: `Answer questions as if you are a spokesperson representing Mo positvely and enthusiastcially based on this context:
-         Mo is a software engineering student at Western. 
-         He interned at Thing Logix in SF. 
-         He's worked on a wedding RSVP system (SES, Lambda, DynamoDB, API Gateway), a GPT-powered chatbot, and an internship tracker. 
-         Mo is a descendant of king solomon
-
-         Keep all answers truthful and don't make up any details, projects, or information about Mo
-      
-
-         He’s looking for a Summer 2026 SWE internship.\n\nUser: ${trimmed}` }],
+        parts: [{ text: SYSTEM_PROMPT + "\n\n" + moProfile }],
       },
+      ...newMessages.map((msg) => ({
+        role: msg.sender === 'bot' ? 'model' : 'user',
+        parts: [{ text: msg.text }],
+      })),
     ];
+    
+    
 
     try {
       const res = await fetch(API_URL, {

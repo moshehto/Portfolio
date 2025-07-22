@@ -46,7 +46,8 @@
     padding: 15px;
     background-color: #f7f7f7;
     overflow-y: auto;
-    height: 400px;
+    max-height: 400px;
+    scroll-behavior: smooth;
   }
   
   .message-row {
