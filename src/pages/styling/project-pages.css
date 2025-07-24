@@ -1,0 +1,58 @@
+.project-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: #7D6A5A;
+    color: #F8F6F1;
+    font-family: Menlo, Consolas, Monaco, 'Courier New', monospace;
+  }
+  
+  .project-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tag {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #444;
+    color: #F8F6F1;
+  }
+  
+  .language {
+    background-color: #556B2F;
+  }
+  
+  .published {
+    background-color: #6B4226;
+  }
+  
+  .github {
+    background-color: #1E90FF;
+    text-decoration: none;
+  }
+  
+  .project-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin: 2rem 0;
+  }
+  
+  .project-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  

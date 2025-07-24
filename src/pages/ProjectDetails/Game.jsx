@@ -1,11 +1,12 @@
+import React from 'react';
 
-const Quant = () => {
+const Game = () => {
     return (
       <div style={{ padding: '2rem'}}>
-        <h1>Quant Strategies</h1>
+        <h1>2048 Game</h1>
         <p>Coming Soon...</p>
       </div>
     );
   };
   
-  export default Quant;
+  export default Game;

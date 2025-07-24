@@ -4,7 +4,7 @@ const GPTPortfolio = () => {
   return (
     <div style={{ padding: '2rem'}}>
       <h1>Chatbot Portfolio Website</h1>
-      <p>This project automates wedding invitations using Google Forms, AWS Lambda, DynamoDB, SES, and QR codes...</p>
+      <p>Coming Soon...</p>
     </div>
   );
 };

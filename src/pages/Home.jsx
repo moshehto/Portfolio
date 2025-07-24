@@ -2,6 +2,8 @@ import React from 'react';
 import Chatbot from '../components/Chatbot';
 import './styling/home.css';
 
+console.log("Home component loaded");
+
 export default function Home() {
   return (
     <main className="home-container">

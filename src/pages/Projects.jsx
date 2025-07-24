@@ -22,7 +22,7 @@ const Projects = () => {
         {/* add more cards as needed */}
         <div className="project-card">
           <img src={gameImg} alt="RSVP" className="project-image" />
-          <Link to="/projects/Game2048" className="project-link">2048 Game</Link>
+          <Link to="/projects/Game" className="project-link">2048 Game</Link>
         </div>
         <div className="project-card">
           <img src={quantImg} alt="RSVP" className="project-image" />
