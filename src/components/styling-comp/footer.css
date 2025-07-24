@@ -67,3 +67,13 @@
     color: #E9D0A7;
   }
   
+  .footer-link {
+  text-decoration: none;
+  color: #F8F6F1; /* cream */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #E9D0A7; /* wheat */
+}
