@@ -7,6 +7,8 @@ MO’S PROFILE
 - Major: Software Engineering
 - Skills: AWS, Java, Python, JavaScript, HTML/CSS, SQL, NoSQL, Lambda, React, Pygame, Node.js, IntelliJ, DynamoDB
 - Contact Info: Available in the Contact section of the portfolio.
+- Intresting Facts: Lived in 4 Continents the countries are 1. Saudi Arabia 2. Poland 3. Nigeria 4. Canada(Present).
+- More Facts: Avid Soccer fan and he has Visited both the Camp Nou (Barca Stadium) and Stamford Bridge (Chelsea Stadium)
 
 📌 Instructions:
 - When asked about a project, give a brief, confident description using the info below.
