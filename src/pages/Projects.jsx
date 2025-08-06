@@ -16,16 +16,29 @@ const Projects = () => {
           <Link to="/projects/Wedding-RSVP" className="project-link">Daawa (SaaS Company)</Link>
         </div>
         <div className="project-card">
-          <img src={catImg} alt="RSVP" className="project-image" />
-          <Link to="/projects/GPTPortfolio" className="project-link">Portfolio Chatbot Website</Link>
+          <img src={catImg} alt="Portfolio Chatbot" className="project-image" />
+          <a 
+            href="https://github.com/moshehto/Portfolio" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="project-link"
+          >
+            Portfolio Chatbot Website
+          </a>
         </div>
-        {/* add more cards as needed */}
         <div className="project-card">
-          <img src={gameImg} alt="RSVP" className="project-image" />
-          <Link to="/projects/Game" className="project-link">2048 Game</Link>
+          <img src={gameImg} alt="2048 Game" className="project-image" />
+          <a 
+            href="https://github.com/moshehto/2048-Game" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="project-link"
+          >
+            2048 Game
+          </a>
         </div>
         <div className="project-card">
-          <img src={quantImg} alt="RSVP" className="project-image" />
+          <img src={quantImg} alt="Data Science" className="project-image" />
           <Link to="/projects/Quant" className="project-link">Data Science</Link>
         </div>
       </div>
