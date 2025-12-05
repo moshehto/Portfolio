@@ -17,7 +17,7 @@ export default function Resume() {
 
 
 
-        <a href={'${base}Mo_Shehto_Resume.pdf'} download="Mo_Shehto_Resume.pdf">
+        <a href={`${base}Mo_Shehto_Resume.pdf`} download="Mo_Shehto_Resume.pdf">
           <button className="download-btn">Download PDF</button>
         </a>
       </div>
