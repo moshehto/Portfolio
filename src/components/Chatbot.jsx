@@ -3,7 +3,7 @@ import './styling-comp/chatbot.css';
 import avatar from '../assets/sleeping-cat.png';
 import moProfile from './moProfile';
 
-const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + import.meta.env.VITE_GEMINI_API_KEY;
+const API_URL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=' + import.meta.env.VITE_GEMINI_API_KEY;
 
 const SYSTEM_PROMPT = `
 You're a bright, enthusiastic, and upbeat spokesperson for Mo, a Software Engineering student at Western University. 
