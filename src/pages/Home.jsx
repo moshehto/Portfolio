@@ -11,7 +11,7 @@ export default function Home() {
         <h1>Welcome to My Portfolio</h1>
         <p>
           I'm Mohamed Shehto, a software engineering student passionate about building cool things.
-          Ask MoBot anything about my projects, experience, or journey 👇
+          Ask anything about my projects, experience, or journey!
         </p>
       </div>
       <Chatbot />

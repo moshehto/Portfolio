@@ -16,19 +16,9 @@ const Footer = () => {
         {/* Columns */}
         <div className="footer-columns">
           <div>
-            <h3>Projects</h3>
-            <ul>
-              <li><Link to="/projects/wedding-rsvp" className="footer-link">Wedding RSVP System</Link></li>
-              <li><Link to="/projects/GPTPortfolio" className="footer-link">GPT Portfolio Chatbot</Link></li>
-              <li><Link to="/projects/Quant" className="footer-link">Data Science</Link></li>
-              <li><Link to="/projects/Game" className="footer-link" >2048 Game</Link></li> 
-            </ul>
-          </div>
-          <div>
             <h3>Pages</h3>
             <ul>
               <li><Link to="/" className="footer-link">Home</Link></li>
-              <li><Link to="/projects" className="footer-link">Projects</Link></li>
               <li><Link to="/resume" className="footer-link">Resume</Link></li>
               <li><Link to="/contact" className="footer-link">Contact</Link></li>
             </ul>

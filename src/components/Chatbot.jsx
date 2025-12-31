@@ -14,7 +14,7 @@ Keep answers factual, enthusiastic, and under 50 words unless asked for details.
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
-    { sender: 'bot', text: "Hi! I’m MoBot. Ask me anything about Mo 👋" },
+    { sender: 'bot', text: "Hi! Ask me anything about Mo 👋" },
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -80,8 +80,7 @@ export default function Chatbot() {
       <div className="chatbot-header">
         <img src={avatar} alt="MoBot" className="chatbot-avatar" />
         <div>
-          <div className="chatbot-name">MoBot</div>
-          <div className="chatbot-subtitle">Ask me anything about Mo</div>
+          <div className="chatbot-name">Chatbot</div>
         </div>
         <span className="chatbot-icon">💬</span>
       </div>
